@@ -93,7 +93,7 @@ app.use(express.static(destDir));
 app.get('*', (req, res) => {
     res.sendFile(path.join(destDir, 'index.html'));
 })
- const port = process.env.PORT || 4600; 
+ const port = process.env.PORT || 3000; 
 app.listen(port, (req, res) => {
     console.log(`running fine on port ${port}`);
 })
