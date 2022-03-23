@@ -1,0 +1,27 @@
+/* You can add global styles to this file, and also import other style files */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  min-height: 100vh;
+  min-height: stretch;
+  min-height: -webkit-fill-available;
+  height: 100%;
+   --tw-bg-opacity: 1;
+   background-color: rgb(31 41 55 / var(--tw-bg-opacity));
+  
+}
+
+html {
+  height: stretch;
+  height: -webkit-fill-available;
+}
+@font-face {
+  font-family: AbrilFatface;
+  src: url(/assets/font/RobotoSlab-VariableFont_wght.ttf) format("truetype");
+}
+
+.font {
+  font-family: AbrilFatface;
+}

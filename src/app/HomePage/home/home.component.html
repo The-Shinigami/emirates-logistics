@@ -1,0 +1,38 @@
+<div class="flex xl:h-screen sm:mt-3 items-center justify-center bg-gray-800 ">
+ 
+  <div class="
+          flex
+          justify-center
+          items-center
+          bg-white
+          m-auto
+          rounded-lg
+          p-5
+        ">
+    <div class="m-auto grid grid-flow-row gap-20 mt-20">
+
+      <div>
+        <h1 class="text-2xl font-medium title font">Welcome To The Management Interface Of Emirates Logistics Intrusion
+          System</h1>
+      </div>
+      <div class="grid xl:grid-cols-3 lg:grid-cols-2 md:grid-cols-1 grid-cols-1">
+
+        <div *ngFor="let link of links;index as i" class="links">
+          <div class="link">
+            <div class="mb-2">
+              This Link will lead you to <strong>{{link.title}}</strong> website
+            </div>
+            <div class="bg-white rounded-2xl w-max py-2 px-2 border-2 border-slate-400">
+              <a href="http://{{link.link}}">
+                <strong class="link">Go to Website</strong>
+                <span><img class="inline-block xl:w-6 lg:w-5 md:w-5 w-10" src="/assets/img/arrow.svg" alt=">>"></span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</div>

@@ -1,0 +1,36 @@
+
+<body class="bg-gray-800 text-gray-100 px-8 py-12 flex">
+
+  <form  [formGroup]="linkForm" (ngSubmit)="onSubmit()"
+    class="max-w-screen-xl  p-8 grid gap-8 grid-cols-1 md:grid-cols-2 md:px-12 lg:px-16 xl:px-32  m-auto bg-gray-100 text-gray-900 rounded-lg shadow-lg">
+    <div class="flex flex-col justify-between">
+
+      <div class="mt-8 text-center">
+        <img class="md:w-full w-1/2 m-auto" src="/assets/img/linkForm.svg" alt="">
+
+      </div>
+    </div>
+    <div class="">
+        <div class="w-full bg-green-500 text-center rounded-lg">
+          {{message}}
+        </div>
+      <div>
+        <span class="text-sm text-gray-600 font-bold">Title</span>
+        <input class="w-full bg-gray-300 text-gray-900 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline"
+          type="text" placeholder="" formControlName="title" required>
+      </div>
+      <div class="mt-8">
+        <span class="text-sm text-gray-600 font-bold">Link</span>
+        <input class="w-full bg-gray-300 text-gray-900 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline"
+          type="text" formControlName="link" required>
+      </div>
+     
+      <div class="mt-8">
+        <button
+          class="uppercase text-sm font-bold tracking-wide bg-gray-800 text-gray-100 p-3 rounded-lg w-full focus:outline-none focus:shadow-outline">
+          Add Link
+        </button>
+      </div>
+    </div>
+</form>
+</body>

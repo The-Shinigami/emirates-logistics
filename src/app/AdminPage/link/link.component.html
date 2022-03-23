@@ -1,0 +1,67 @@
+<div class="flex w-full h-full bg-gray-800 ">
+  <div class="m-auto xl:w-9/12 lg:w-9/12 md:w-10/12 w-full mt-20">
+    <div id="app">
+      <div class="mx-auto px-8 py-8">
+        <!--  xxflex xxitems-center xxjustify-center -->
+        <div class="relative">
+          <table class="  m-auto w-full ">
+            <thead class="sm:block hidden  sm:relative w-full m-auto">
+              <tr class=" rounded-3xl sm:inline-block w-full">
+                <th style="width:500px;"
+                  class=" text-gray-700 py-6  rounded-2xl bg-amber-200 capitalize    text-center w-1/3">Title</th>
+                <th class=" text-gray-700 rounded-2xl bg-amber-200 capitalize  text-center w-1/3">
+                  Link</th>
+                <th class=" text-gray-700  rounded-2xl bg-amber-200 capitalize   text-center w-1/3">
+                  Delete</th>
+              </tr>
+            </thead>
+            <tbody class="text-center sm:block hidden m-auto">
+              <tr *ngFor="let link of links"
+                class="rounded-3xl border-black shadow-lg sm:shadow-none mb-6 sm:mb-0 flex flex-row flex-wrap
+                sm:flex-no-wrap border-l-4 border-r-4 w-full">
+                <td class="break-all rounded-3xl py-6 border-black  pl-4  relative w-1/3 border-r-4 bg-slate-300">
+                  {{link.title}}
+                </td>
+                <td
+                  class="break-all rounded-3xl py-6  border-black pl-4  text-gray-800 relative w-1/3  border-l-4 border-r-4  bg-slate-300">
+                  <a href="http://{{link.link}}" class="py-6">{{link.link}}</a>
+                </td>
+                <td
+                  class="rounded-3xl py-4 border-black pl-4  text-gray-800 relative w-1/3  border-l-4 bg-slate-300">
+                  <button (click) = "delete(link)"><img src="/assets/img/trash.svg" class="py-4" alt="delete"></button>
+                </td>
+              </tr>
+            </tbody>
+            <tbody class="text-center w-full sm:hidden m-auto">
+              <tr class="w-full m-auto ">
+                <table *ngFor="let link of links;let i = index" class=" rounded-3xl  w-full mb-2">
+                  <tr>
+                    <td class="bg-amber-200 rounded-3xl font-bold text-xl">
+                      Id
+                    </td>
+                    <td class="bg-slate-300 rounded-3xl  text-xl p-4">
+                      {{i}}
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="bg-amber-200 rounded-3xl font-bold text-xl">Title</td>
+                    <td class="bg-slate-300 rounded-3xl text-xl p-4 break-all">{{link.title}}</td>
+                  </tr>
+                  <tr>
+                    <td class="bg-amber-200 rounded-3xl font-bold text-xl ">Link</td>
+                    <td class="bg-slate-300 rounded-3xl  text-xl p-4 break-all">
+                        <a href="http://{{link.link}}">{{link.link}}</a></td>
+                  </tr>
+                  <tr>
+                    <td class="bg-amber-200 rounded-3xl font-bold text-xl">Delete</td>
+                    <td class="bg-slate-300 rounded-3xl text-xl p-4"><button (click) = "delete(link)"><img src="/assets/img/trash.svg"  class="py-4" alt="delete"></button></td>
+                  </tr>
+                </table>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

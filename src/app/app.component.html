@@ -1,0 +1,67 @@
+<
+<header>
+  <nav class="
+          flex flex-wrap
+          items-center
+          justify-between
+          w-full
+          py-4
+          md:py-0
+          px-4
+          text-lg text-gray-700
+          bg-white  
+          fixed
+          top-0
+          z-40
+        ">
+
+    <div>
+      <a href="#" class="font text-blue-900">
+        <img class="w-9 inline-block " src="/assets/img/logo.jpg" alt="Emirates logistics logo"> Emirates logistics
+      </a>
+    </div>
+
+
+    <svg xmlns="http://www.w3.org/2000/svg" #menubutton class="h-6 w-6 cursor-pointer md:hidden block"
+      viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+    </svg>
+
+    <div class="hidden w-full md:flex md:items-center md:w-auto" #menu>
+      <ul class="
+              text-base text-gray-700
+              md:flex
+              md:justify-between 
+              md:pt-0">
+        <li *ngIf="isAuthenticated">
+          <a id="usersList" class="btn md:p-4 py-1  block hover:text-purple-400 text-blue-900 active" routerLink="users">Users List</a>
+        </li>
+        <li *ngIf="isAuthenticated">
+          <a id="addUser"  class="btn md:p-4 py-1  block hover:text-purple-400 text-blue-900" routerLink="addUser">Add User</a>
+        </li>
+        <li *ngIf="isAuthenticated" >
+          <a id="linksList"   class="btn md:p-4 py-1  block hover:text-purple-400 text-blue-900" routerLink="links">Links List</a>
+        </li>
+        <li *ngIf="isAuthenticated">
+          <a id="addLink"  class="btn md:p-4 py-1  block hover:text-purple-400 text-blue-900" routerLink="addLink">Add Link</a>
+        </li>
+
+        <li *ngIf="!isAuthenticated">
+          <a class="btn md:p-4 py-4  block hover:text-purple-400 text-blue-900" routerLink="auth">Sign In</a>
+        </li>
+        <li *ngIf="isAuthenticated">
+          <a class="btn md:p-4 py-4  block hover:text-purple-400 text-blue-900" (click)="logOut()" routerLink="">Sign out</a>
+        </li>
+        
+      </ul>
+
+    </div>
+
+  </nav>
+</header>
+
+
+<div class="px-4">
+
+</div>
+<router-outlet (activate)="logIn()"></router-outlet>
