@@ -102,9 +102,7 @@ app.delete('/users', (req, res) => {
 
 
 const destDir = path.join(__dirname, 'dist/home-page');
-
 app.use(express.static(destDir));
-/* app.use('/links',express.static(path.join(__dirname,'dist')))*/
 app.get('*', (req, res) => {
   res.sendFile(path.join(destDir, 'index.html'));
 })
