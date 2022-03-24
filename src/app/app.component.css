@@ -6,4 +6,6 @@
 .btn {
  color: blue !important;
 }
-
+.cover-btn{
+  padding:16px;
+}
