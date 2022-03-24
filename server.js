@@ -5,23 +5,12 @@ const app = express();
 var cors = require('cors');
 const bodyParser = require('body-parser');
 
-
-const pathfile = './users.json';
-
-if (!fs.existsSync(pathfile)) {
-  user = {
-    "username": "aa",
-    "password": "aa"
-  }
-  let users = [];
-  users.push(user);
-  fs.writeFileSync(path.resolve(__dirname, 'users.json'), JSON.stringify(users));
-}
-
+/* 
+ */
 
 /* ------------------------------------------------------------------ */
 app.use(cors({
-  origin: ['http://localhost:4200', 'http://192.168.100.134:4200', 'http://0.0.0.0:4200']
+  origin: ['https://sysoxtest.herokuapp.com', 'http://192.168.100.134:3000', 'http://0.0.0.0:3000']
 }));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({

@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import axios from 'axios'
 
 const api = axios.create({
-  baseURL:"http://localhost:4600/links"
+  baseURL:"https://sysoxtest.herokuapp.com/links"
 })
 @Injectable({
   providedIn: 'root'

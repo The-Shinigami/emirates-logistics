@@ -2,7 +2,7 @@
   "name": "home-page",
   "version": "0.0.0",
   "scripts": {
-    "heroku-postbuild":"ng build --prod",
+    "heroku-postbuild": "ng build --prod",
     "ng": "ng",
     "start": "node server.js",
     "build": "ng build",
@@ -21,13 +21,15 @@
     "@angular/router": "~13.1.0",
     "@ngneat/tailwind": "^7.0.3",
     "axios": "^0.26.1",
+    "body-parser": "*",
     "concurrently": "^7.0.0",
+    "cors": "*",
+    "dotenv": "^16.0.0",
+    "express": "*",
+    "mongoose": "^6.2.8",
     "rxjs": "~7.4.0",
     "tslib": "^2.3.0",
-    "zone.js": "~0.11.4",
-      "express":"*",
-    "body-parser":"*",
-    "cors":"*"
+    "zone.js": "~0.11.4"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~13.1.2",
