@@ -20,14 +20,14 @@ app.use(bodyParser.urlencoded({
 /* link route */
 /* ------------------------------- */
 /* ------------------------------------------------------------------ */
-app.get('/links', (req, res) => {
+app.get('/api/links', (req, res) => {
   let rawdata = fs.readFileSync(path.resolve(__dirname, 'links.json'));
   let links = JSON.parse(rawdata);
   res.send(links)
 })
 /* ------------------------------- */
 
-app.post('/links', (req, res) => {
+app.post('/api/links', (req, res) => {
   let rawdata = fs.readFileSync(path.resolve(__dirname, 'links.json'));
   let links = JSON.parse(rawdata);
   links.push(req.body);
@@ -35,7 +35,7 @@ app.post('/links', (req, res) => {
   res.sendStatus(200);
 })
 /* ------------------------------- */
-app.delete('/links', (req, res) => {
+app.delete('/api/links', (req, res) => {
   let rawdata = fs.readFileSync(path.resolve(__dirname, 'links.json'));
   let links = JSON.parse(rawdata);
   links = links.filter(function (link, index, arr) {
@@ -48,7 +48,7 @@ app.delete('/links', (req, res) => {
 /* user route */
 /* ------------------------------- */
 
-app.post('/users/auth', (req, res) => {
+app.post('/api/users/auth', (req, res) => {
   let rawdata = fs.readFileSync(path.resolve(__dirname, 'users.json'));
   let users = JSON.parse(rawdata);
   user = users.filter(function (link, index, arr) {
@@ -62,7 +62,7 @@ app.post('/users/auth', (req, res) => {
 
 /* ------------------------------- */
 
-app.post('/users', (req, res) => {
+app.post('/api/users', (req, res) => {
   let rawdata = fs.readFileSync(path.resolve(__dirname, 'users.json'));
   let users = JSON.parse(rawdata);
   users.push(req.body);
@@ -71,13 +71,13 @@ app.post('/users', (req, res) => {
 })
 /* ------------------------------- */
 
-app.get('/users', (req, res) => {
+app.get('/api/users', (req, res) => {
   let rawdata = fs.readFileSync(path.resolve(__dirname, 'users.json'));
   let users = JSON.parse(rawdata);
   res.send(users)
 })
 /* ------------------------------- */
-app.delete('/users', (req, res) => {
+app.delete('/api/users', (req, res) => {
   let rawdata = fs.readFileSync(path.resolve(__dirname, 'users.json'));
   let users = JSON.parse(rawdata);
   console.log(req.body);

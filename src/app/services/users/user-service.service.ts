@@ -4,7 +4,7 @@ import {
 import axios from 'axios'
 
 const api = axios.create({
-  baseURL: 'https://sysoxtest.herokuapp.com/users',
+  baseURL: 'https://sysoxtest.herokuapp.com/api/users',
 });
 @Injectable({
   providedIn: 'root'
