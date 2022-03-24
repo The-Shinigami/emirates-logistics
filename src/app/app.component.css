@@ -1,19 +1,13 @@
 .active,
 .btn:hover {
-  background-color: rgb(112, 110, 110);
   color: white!important;
+  border-bottom:solid 2px black;
 }
 
 .btn {
  border-radius: 20px;
  color: blue !important;
- padding: 0px;
- padding:7px;
 }
 .active {
   color: white !important;
-}
-.cover-btn{
-  padding-top:12px;
-  padding-bottom:12px;
 }
