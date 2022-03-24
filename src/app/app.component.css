@@ -13,3 +13,7 @@
 .active {
   color: white !important;
 }
+.cover-btn{
+  padding-top:16px;
+  padding-bottom:16px;
+}
