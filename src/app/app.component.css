@@ -1,13 +1,9 @@
 .active,
 .btn:hover {
-  color: white!important;
   border-bottom:solid 2px black;
 }
 
 .btn {
- border-radius: 20px;
  color: blue !important;
 }
-.active {
-  color: white !important;
-}
+

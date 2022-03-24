@@ -35,23 +35,23 @@
               md:justify-between 
               md:pt-0">
         <li class="cover-btn" *ngIf="isAuthenticated">
-          <a id="usersList" class="btn md:p-4 py-1  block hover:text-purple-400 text-blue-900 active" routerLink="users">Users List</a>
+          <a id="usersList" class="btn  py-1  block hover:text-purple-400 text-blue-900 active" routerLink="users">Users List</a>
         </li>
         <li class="cover-btn" *ngIf="isAuthenticated">
-          <a id="addUser"  class="btn md:p-4 py-1  block hover:text-purple-400 text-blue-900" routerLink="addUser">Add User</a>
+          <a id="addUser"  class="btn  py-1  block hover:text-purple-400 text-blue-900" routerLink="addUser">Add User</a>
         </li>
         <li class="cover-btn" *ngIf="isAuthenticated" >
-          <a id="linksList"   class="btn md:p-4 py-1  block hover:text-purple-400 text-blue-900" routerLink="links">Links List</a>
+          <a id="linksList"   class="btn  py-1  block hover:text-purple-400 text-blue-900" routerLink="links">Links List</a>
         </li>
         <li class="cover-btn" *ngIf="isAuthenticated">
-          <a id="addLink"  class="btn md:p-4 py-1  block hover:text-purple-400 text-blue-900" routerLink="addLink">Add Link</a>
+          <a id="addLink"  class="btn  py-1  block hover:text-purple-400 text-blue-900" routerLink="addLink">Add Link</a>
         </li>
 
         <li class="cover-btn" *ngIf="!isAuthenticated">
-          <a class="btn md:p-4 py-4  block hover:text-purple-400 text-blue-900" routerLink="auth">Sign In</a>
+          <a class="btn  py-4  block hover:text-purple-400 text-blue-900" routerLink="auth">Sign In</a>
         </li>
         <li class="cover-btn" *ngIf="isAuthenticated">
-          <a class="btn md:p-4 py-4  block hover:text-purple-400 text-blue-900" (click)="logOut()" routerLink="">Sign out</a>
+          <a class="btn  py-4  block hover:text-purple-400 text-blue-900" (click)="logOut()" routerLink="">Sign out</a>
         </li>
         
       </ul>
