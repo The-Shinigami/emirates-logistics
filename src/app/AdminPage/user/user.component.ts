@@ -25,7 +25,6 @@ export class UserComponent implements OnInit {
     this.load = true;
   }
   async delete(user: any) {
-    console.log(user);
     if (confirm("are you sure you want de delete the user")) {
 
       if (await this.userService.deleteUser(user)) {

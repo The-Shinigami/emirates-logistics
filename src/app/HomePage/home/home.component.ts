@@ -26,7 +26,6 @@ links: any;
   ngOnInit() {
     this.getData();
     this.toggleNavbar();
-    /* console.log(this.screenHeight); */
   }
   toggleNavbar() {
     const button = document.querySelector('#menu-button');

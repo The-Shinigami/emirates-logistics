@@ -12,6 +12,7 @@ export class AuthGuardService implements CanActivate{
    }
   canActivate(route: ActivatedRouteSnapshot): boolean {
     if (this.userService.isAuthenticated() == true) {
+      document.getElementById('menu')?.classList.add('hidden');
       return true;
     } 
     this.router.navigate(['auth']);

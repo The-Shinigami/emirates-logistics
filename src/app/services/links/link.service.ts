@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import axios from 'axios'
 
 const api = axios.create({
-  baseURL:"https://sysoxtest.herokuapp.com/api/links"
+  baseURL:"http://localhost:3000/api/links"
 })
 @Injectable({
   providedIn: 'root'
@@ -11,7 +11,7 @@ export class LinkService {
 
 constructor() { }
  async getLinks() {
-    return await api.get('').then((res) => {
+   return await api.get('').then((res) => {
       return res.data;
     }).catch((err) => {
       console.log(err);

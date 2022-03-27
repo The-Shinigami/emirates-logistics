@@ -37,6 +37,7 @@ export class AppComponent implements AfterViewInit {
     this.navbarActive();
   }
   navbarActive() {
+      
     const dom: HTMLElement = this.elementRef.nativeElement;
     var btns = dom.querySelectorAll(".btn");
   

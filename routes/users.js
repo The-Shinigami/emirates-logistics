@@ -1,42 +1,51 @@
-app.post('/users/auth', (req, res) => {
-  let rawdata = fs.readFileSync(path.resolve(__dirname, 'users.json'));
-  let users = JSON.parse(rawdata);
-  user = users.filter(function (link, index, arr) {
-    return link.username == req.body.username && link.password == req.body.password
-  });
-  if (user[0] == null) {
-    res.send(false);
-  }
-  res.send(true);
+const express = require("express");
+const router = express.Router();
+const User = require('../models/users');
+
+
+router.post('/auth', (req, res) => {
+  User.findOne({
+      "username": req.body.username,
+      "password": req.body.password
+    })
+    .exec(function (err) {
+  if (err) res.send(false);
+ res.send(true);
+});
+  
 })
 
 /* ------------------------------- */
 
-app.post('/users', (req, res) => {
-  let rawdata = fs.readFileSync(path.resolve(__dirname, 'users.json'));
-  let users = JSON.parse(rawdata);
-  users.push(req.body);
-  fs.writeFileSync(path.resolve(__dirname, 'users.json'), JSON.stringify(users));
-  res.sendStatus(200);
+router.post('/', (req, res) => {
+     user = new User(
+        {
+            username :  req.body.username,
+            password : req.body.password
+        }
+    )  
+    user.save().then(() => {
+        res.sendStatus(200);
+    });  
 })
 /* ------------------------------- */
 
-app.get('/users', (req, res) => {
-  let rawdata = fs.readFileSync(path.resolve(__dirname, 'users.json'));
-  let users = JSON.parse(rawdata);
-  res.send(users)
+router.get('/', (req, res) => {
+   User.find()
+        .then((users) => {
+            res.send(users)
+        })  
 })
 /* ------------------------------- */
-app.delete('/users', (req, res) => {
-  let rawdata = fs.readFileSync(path.resolve(__dirname, 'users.json'));
-  let users = JSON.parse(rawdata);
-  console.log(req.body);
-  users = users.filter(function (user, index, arr) {
-    return user.username != req.body.username && user.password != req.body.password;
-  });
-
-  fs.writeFileSync(path.resolve(__dirname, 'users.json'), JSON.stringify(users));
-  res.sendStatus(200);
+router.delete('/', (req, res) => {
+    User.findOne({
+       "username": req.body.username,
+      "password": req.body.password
+    })
+    .exec(function (err, user) {
+        if (err) res.send(500);
+        user.delete();
+ res.send(200);
+});
 })
-
-
+module.exports = router

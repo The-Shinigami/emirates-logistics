@@ -4,7 +4,9 @@ const Link = require('../models/links');
 
 router.get('/', (req, res) => {
     Link.find()
-    .then((links)=>  res.send(links))  
+        .then((links) => {
+            res.send(links)
+        })  
 });
 /* ------------------------------- */
 //Create a link
@@ -20,14 +22,16 @@ router.post('/', (req, res) => {
     });  
 });
 /* ------------------------------- */
-/* app.delete('/', (req, res) => {
-    let rawdata = fs.readFileSync(path.resolve(__dirname, 'links.json'));
-    let links = JSON.parse(rawdata);
-    links = links.filter(function (link, index, arr) {
-        return link.title != req.body.title && link.link != req.body.link;
-    });
-    fs.writeFileSync(path.resolve(__dirname, 'links.json'), JSON.stringify(links));
-    res.sendStatus(200);
-}); */
+router.delete('/', (req, res) => {
+   Link.findOne({
+      "title": req.body.title,
+      "link": req.body.link
+    })
+    .exec(function (err, link) {
+        if (err) res.send(500);
+        link.delete();
+ res.send(200);
+});
+});
 
 module.exports = router

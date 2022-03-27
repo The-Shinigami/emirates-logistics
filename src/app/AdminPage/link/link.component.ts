@@ -20,7 +20,6 @@ export class LinkComponent implements OnInit {
     this.load = true;
   }
   async delete(link: any) {
-    console.log(link);
     if (confirm("are you sure you want de delete the link")) {
 
       if (await this.linkService.deleteLink(link)) {
