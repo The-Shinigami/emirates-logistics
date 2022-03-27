@@ -10,7 +10,7 @@ const bodyParser = require('body-parser');
 
 /* ------------------------------------------------------------------ */
 app.use(cors({
-  origin: ['https://sysoxtest.herokuapp.com', 'http://192.168.100.134:3000', 'http://0.0.0.0:3000']
+  origin: ['https://emirates-logistics.herokuapp.com', 'http://192.168.100.134:3000', 'http://0.0.0.0:3000']
 }));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
